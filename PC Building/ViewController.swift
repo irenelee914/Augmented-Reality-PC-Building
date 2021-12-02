@@ -11,14 +11,19 @@ import RealityKit
 class ViewController: UIViewController {
     
     @IBOutlet var arView: ARView!
+    var anchor:Experience.Box!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
+        anchor = try! Experience.loadBox()
+        anchor.generateCollisionShapes(recursive: true)
         
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+        arView.scene.anchors.append(anchor)
+    }
+    
+    @IBAction func button(_ sender: Any) {
+        anchor.notifications.fanStart.post()
     }
 }
