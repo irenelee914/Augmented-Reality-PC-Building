@@ -16,6 +16,7 @@
 		CB30F8CC273239D500039A71 /* PC_BuildingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30F8CB273239D500039A71 /* PC_BuildingUITests.swift */; };
 		CB6B0FED2789397800CEFBD1 /* RAM.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = CB6B0FEC27892ABD00CEFBD1 /* RAM.rcproject */; };
 		CB82186627586AD300BD7C0C /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82186527586AD300BD7C0C /* Popup.swift */; };
+		CBBB59FA278A7644002A5CF6 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB59F9278A7644002A5CF6 /* InstructionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CB30F8CD273239D500039A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB6B0FEC27892ABD00CEFBD1 /* RAM.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = RAM.rcproject; sourceTree = "<group>"; };
 		CB82186527586AD300BD7C0C /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		CBBB59F9278A7644002A5CF6 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				CB30F8A9273239CE00039A71 /* AppDelegate.swift */,
 				CB30F8AB273239CE00039A71 /* ViewController.swift */,
+				CBBB59F9278A7644002A5CF6 /* InstructionsViewController.swift */,
 				CB82186527586AD300BD7C0C /* Popup.swift */,
 				CB6B0FEC27892ABD00CEFBD1 /* RAM.rcproject */,
 				CB30F8AF273239CE00039A71 /* Main.storyboard */,
@@ -265,6 +268,7 @@
 				CB30F8AC273239CE00039A71 /* ViewController.swift in Sources */,
 				CB30F8AA273239CE00039A71 /* AppDelegate.swift in Sources */,
 				CB82186627586AD300BD7C0C /* Popup.swift in Sources */,
+				CBBB59FA278A7644002A5CF6 /* InstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
