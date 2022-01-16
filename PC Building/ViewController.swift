@@ -127,6 +127,8 @@ class ViewController: UIViewController, ARSessionDelegate {
     }
     
     func updateARView() -> Void {
+        
+        //let anchor = try! RAM.loadRAM1()
         if stateController.step == 0 {
             statusViewController.showMessage("POINT CAMERA TOWARDS MOTHEROARD")
             self.detectionOverlay.isHidden = false
@@ -145,6 +147,17 @@ class ViewController: UIViewController, ARSessionDelegate {
             //step 2, insert RAM sticks
             notificationTrigger.post()
             statusViewController.showMessage("PLACE RAM STICKS IN UNTIL CLICK")
+            
+        }
+        //open cpu lever socket thing before this
+        else if stateController.step == 3 {
+            //step 3, insert CPU
+            arView.scene.anchors.removeAll()
+            let anchor = try! RAM.loadCPU()
+            anchor.generateCollisionShapes(recursive: true)
+            arView.scene.anchors.append(anchor)
+            //notificationTrigger = anchor.notifications.stepRAM2
+            statusViewController.showMessage("PLACE THE CPU INTO THE SOCKET")
             
         }
 }

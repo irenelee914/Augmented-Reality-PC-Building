@@ -13,5 +13,25 @@
     "libraryIdentifier" : "d103d98b2d83a180017070f11115c663",
     "format" : "model",
     "displayName" : "cpu_lever_animation.usdz"
+  },
+  {
+    "libraryIdentifier" : "1c6148cab70e0b900ed1bd5735bd7cf4",
+    "format" : "model",
+    "displayName" : "Intel_Processor_Core_i5-661.usdz"
+  },
+  {
+    "libraryIdentifier" : "d8f17062495ed7d1898ada8a8eeb06ae",
+    "format" : "image",
+    "displayName" : "IMG_6803.heic"
+  },
+  {
+    "libraryIdentifier" : "8e2971cdd0efa28073c875165940155f",
+    "format" : "image",
+    "displayName" : "IMG_6806.heic"
+  },
+  {
+    "libraryIdentifier" : "ea8081823ffaab6ff1a7507aadbc124a",
+    "format" : "image",
+    "displayName" : "IMG_6808.heic"
   }
 ]

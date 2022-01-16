@@ -55,7 +55,7 @@
 		CB30F8CD273239D500039A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB6B0FEC27892ABD00CEFBD1 /* RAM.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = RAM.rcproject; sourceTree = "<group>"; };
 		CB82186527586AD300BD7C0C /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
-		CB8B10DD278CFF3E006B6860 /* ObjectDetector496.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector496.mlmodel; path = ../../../Downloads/ObjectDetector496.mlmodel; sourceTree = "<group>"; };
+		CB8B10DD278CFF3E006B6860 /* ObjectDetector496.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector496.mlmodel; sourceTree = "<group>"; };
 		CB8B10E3278D00F2006B6860 /* ObjectDetectorBreakfast.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetectorBreakfast.mlmodel; sourceTree = "<group>"; };
 		CB8B10E9278D057F006B6860 /* FullNetwork.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FullNetwork.mlmodel; sourceTree = "<group>"; };
 		CBBB59F9278A7644002A5CF6 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
@@ -457,13 +457,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CZRYSM95LS;
+				DEVELOPMENT_TEAM = AL3YC75HZK;
 				INFOPLIST_FILE = "PC Building/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Giga-Keeners.PC-Building";
+				PRODUCT_BUNDLE_IDENTIFIER = GigaKeeners.Team.PCBuilding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,13 +476,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CZRYSM95LS;
+				DEVELOPMENT_TEAM = AL3YC75HZK;
 				INFOPLIST_FILE = "PC Building/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Giga-Keeners.PC-Building";
+				PRODUCT_BUNDLE_IDENTIFIER = GigaKeeners.Team.PCBuilding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
