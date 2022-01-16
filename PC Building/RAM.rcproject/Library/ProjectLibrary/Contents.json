@@ -8,5 +8,10 @@
     "libraryIdentifier" : "354d90070b87694fdfae3e5b635db0e1",
     "format" : "model",
     "displayName" : "Crucial_8_GB_DDR4_2133_RAM.usdz"
+  },
+  {
+    "libraryIdentifier" : "d103d98b2d83a180017070f11115c663",
+    "format" : "model",
+    "displayName" : "cpu_lever_animation.usdz"
   }
 ]

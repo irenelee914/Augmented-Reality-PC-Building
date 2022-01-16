@@ -84,7 +84,7 @@ class ViewController: UIViewController, ARSessionDelegate {
                 DispatchQueue.main.async(execute: {
                     // perform all the UI updates on the main queue
                     if let results = request.results {
-                        print(results)
+//                        print(results)
                         self.drawVisionRequestResults(results)
                     }
                 })
@@ -140,8 +140,6 @@ class ViewController: UIViewController, ARSessionDelegate {
             arView.scene.anchors.append(anchor)
             notificationTrigger = anchor.notifications.stepRAM2
             statusViewController.showMessage("DEPRESS THE WHITE LEVERS")
-            
-            
         }
         else if stateController.step == 2 {
             //step 2, insert RAM sticks
