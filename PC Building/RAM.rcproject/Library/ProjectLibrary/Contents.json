@@ -33,5 +33,25 @@
     "libraryIdentifier" : "ea8081823ffaab6ff1a7507aadbc124a",
     "format" : "image",
     "displayName" : "IMG_6808.heic"
+  },
+  {
+    "libraryIdentifier" : "bda3e7d3eae5c8a907a2f6690e5b9fd8",
+    "format" : "image",
+    "displayName" : "IMG_6880.heic"
+  },
+  {
+    "libraryIdentifier" : "2f5f67275f66880f9e490dfa97195c75",
+    "format" : "image",
+    "displayName" : "IMG_6881.heic"
+  },
+  {
+    "libraryIdentifier" : "07baac9de904a2805915a0285f2b518d",
+    "format" : "model",
+    "displayName" : "cpu_fan.usdz"
+  },
+  {
+    "libraryIdentifier" : "116b1e715b51c96c64d2e30574391a2a",
+    "format" : "model",
+    "displayName" : "Random_access_memory_RAM_DDR3.usdz"
   }
 ]
