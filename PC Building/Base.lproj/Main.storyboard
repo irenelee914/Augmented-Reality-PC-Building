@@ -20,11 +20,11 @@
                             <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-il-D8a" userLabel="Message Panel">
                                 <rect key="frame" x="18" y="52.000000000000007" width="378" height="30.333333333333336"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OyT-QW-rlJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="378" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="30.333333333333336"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCH-0X-REd">
-                                            <rect key="frame" x="0.0" y="0.0" width="378" height="30.333333333333332"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="378" height="30"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8BA-Ae-Epm">
                                                 <rect key="frame" x="0.0" y="0.0" width="378" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +119,16 @@
                                     <segue destination="agd-e8-sbn" kind="embed" id="FfI-db-4Vq"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSP-ev-58H">
+                                <rect key="frame" x="354" y="112" width="50" height="31"/>
+                                <state key="normal" title="Button" backgroundImage="line.horizontal.3" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="line.horizontal.3" catalog="system" title=" ">
+                                    <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="menuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w68-EC-UgW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="caB-zI-q0l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -130,6 +140,8 @@
                             <constraint firstItem="Flg-nc-yDf" firstAttribute="leading" secondItem="caB-zI-q0l" secondAttribute="leading" id="YhV-rA-tMU"/>
                             <constraint firstItem="caB-zI-q0l" firstAttribute="trailing" secondItem="pNq-ix-BkO" secondAttribute="trailing" constant="31" id="c7g-ah-pvT"/>
                             <constraint firstItem="7IT-PV-fyc" firstAttribute="trailing" secondItem="caB-zI-q0l" secondAttribute="trailing" id="eXE-H4-QIp"/>
+                            <constraint firstItem="caB-zI-q0l" firstAttribute="trailing" secondItem="eSP-ev-58H" secondAttribute="trailing" constant="10" id="iTk-9F-Juf"/>
+                            <constraint firstItem="eSP-ev-58H" firstAttribute="top" secondItem="7IT-PV-fyc" secondAttribute="bottom" constant="8" symbolic="YES" id="kIA-Xz-bvg"/>
                             <constraint firstItem="7IT-PV-fyc" firstAttribute="top" secondItem="caB-zI-q0l" secondAttribute="top" constant="20" id="o8g-dp-ra1"/>
                             <constraint firstItem="7IT-PV-fyc" firstAttribute="leading" secondItem="caB-zI-q0l" secondAttribute="leading" id="or6-IZ-v4S"/>
                             <constraint firstItem="caB-zI-q0l" firstAttribute="bottom" secondItem="288-AQ-uCy" secondAttribute="bottom" constant="27" id="uHd-FJ-q7D"/>
@@ -138,6 +150,9 @@
                     </view>
                     <connections>
                         <outlet property="arView" destination="Flg-nc-yDf" id="zxn-PG-gJf"/>
+                        <outlet property="menuButton" destination="eSP-ev-58H" id="0Zh-pM-jCU"/>
+                        <outlet property="nextButton" destination="pNq-ix-BkO" id="dFO-Rh-YoK"/>
+                        <outlet property="previousButton" destination="288-AQ-uCy" id="vOx-ke-FcE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -148,6 +163,10 @@
     <resources>
         <image name="arrow.left.circle" catalog="system" width="128" height="121"/>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

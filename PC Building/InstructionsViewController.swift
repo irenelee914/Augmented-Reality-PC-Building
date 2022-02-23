@@ -18,7 +18,7 @@ class InstructionsViewController: UIViewController {
     // MARK: - Message Handling
     private var messageHideTimer: Timer?
     /// Seconds before the timer message should fade out. Adjust if the app needs longer transient messages.
-    private let displayDuration: TimeInterval = 100
+    private let displayDuration: TimeInterval = 1000
     
     func showMessage(_ text: String, autoHide: Bool = true) {
         // Cancel any previous hide timer.

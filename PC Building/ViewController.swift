@@ -12,6 +12,9 @@ import Vision
 
 class ViewController: UIViewController, ARSessionDelegate {
     
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet var arView: ARView!
     var notificationTrigger: RAM.NotificationTrigger!
     var stateController: StateController!
@@ -46,9 +49,16 @@ class ViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // PopUP
+        
+        // --- Hide Buttons ---
+        self.previousButton.isHidden = true
+        self.nextButton.isHidden = true
+        self.menuButton.isHidden = true
+        
+        
+        // --- PopUP View: Gives user 2 options ----
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                    let pop = Popup()
+            let pop = Popup(frame: CGRect(), viewController: self)
                     self.view.addSubview(pop)
         }
         
@@ -109,11 +119,12 @@ class ViewController: UIViewController, ARSessionDelegate {
         self.detectionOverlay.position = CGPoint(x: self.rootLayer.bounds.midX,
                                                  y: self.rootLayer.bounds.midY)
         self.rootLayer.addSublayer(self.detectionOverlay)
+        self.detectionOverlay.isHidden = true
     }
     
     
     @IBAction func prevButton(_ sender: Any) {
-        if stateController.step > 0 {
+        if stateController.step > 1 {
             stateController.step -= 1
         }
         print("\(stateController.step)")
@@ -126,15 +137,27 @@ class ViewController: UIViewController, ARSessionDelegate {
         updateARView()
     }
     
+    @IBAction func menuButton(_ sender: Any) {
+        // --- PopUP View: Gives user 2 options ----
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            let pop = Popup(frame: CGRect(), viewController: self)
+                    self.view.addSubview(pop)
+        }
+    }
+    
     func updateARView() -> Void {
-        
-        //let anchor = try! RAM.loadRAM1()
+        // main menu, view when popup is showed
         if stateController.step == 0 {
-            statusViewController.showMessage("POINT CAMERA TOWARDS MOTHEROARD")
-            self.detectionOverlay.isHidden = false
         }
         else if stateController.step == 1 {
+            // --- show Buttons ---
             self.detectionOverlay.isHidden = true
+            self.previousButton.isHidden = false
+            self.nextButton.isHidden = false
+            
+            statusViewController.showMessage("POINT CAMERA TOWARDS MOTHEROARD")
+        }
+        else if stateController.step == 2 {
             //step 1, depress RAM levers
             arView.scene.anchors.removeAll()
             let anchor = try! RAM.loadRAM1()
@@ -143,14 +166,13 @@ class ViewController: UIViewController, ARSessionDelegate {
             notificationTrigger = anchor.notifications.stepRAM2
             statusViewController.showMessage("DEPRESS THE WHITE LEVERS")
         }
-        else if stateController.step == 2 {
+        else if stateController.step == 3 {
             //step 2, insert RAM sticks
             notificationTrigger.post()
             statusViewController.showMessage("PLACE RAM STICKS IN UNTIL CLICK")
-            
         }
         //open cpu lever socket thing before this
-        else if stateController.step == 3 {
+        else if stateController.step == 4 {
             //step 3, insert CPU
             arView.scene.anchors.removeAll()
             let anchor = try! RAM.loadCPU()
@@ -158,7 +180,6 @@ class ViewController: UIViewController, ARSessionDelegate {
             arView.scene.anchors.append(anchor)
             //notificationTrigger = anchor.notifications.stepRAM2
             statusViewController.showMessage("PLACE THE CPU INTO THE SOCKET")
-            
         }
 }
 
@@ -199,10 +220,10 @@ extension ViewController {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
         let formattedString = NSMutableAttributedString(string: String(format: "\(identifier)\nConfidence:  %.2f", confidence))
-        let largeFont = UIFont(name: "Helvetica", size: 24.0)!
+        let largeFont = UIFont(name: "Helvetica", size: 18.0)!
         formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: identifier.count))
         textLayer.string = formattedString
-        textLayer.bounds = CGRect(x: 0, y: 0, width: bounds.size.height - 10, height: bounds.size.width - 10)
+        textLayer.bounds = CGRect(x: -bounds.size.width/2 - 10, y: -bounds.size.height/2 + 30, width: bounds.size.height - 10, height: bounds.size.width - 10)
         textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         textLayer.shadowOpacity = 0.7
         textLayer.shadowOffset = CGSize(width: 2, height: 2)

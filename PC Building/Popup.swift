@@ -9,6 +9,8 @@ import UIKit
 
 class Popup: UIView {
     
+    var viewController:ViewController
+    
     fileprivate let titleLabel: UILabel = {
         let label = PaddingLabel(withInsets: 0, 8, 18, 18)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +49,7 @@ class Popup: UIView {
         button.layer.borderColor = UIColor.clear.cgColor
         button.setTitle("Identify PC Parts", for: .normal)
         button.setTitleColor(.white, for: .normal)
-//        myFirstButton.addTarget(self, action: #selector(pressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(identifyPCPartsButtonClicked), for: .touchUpInside)
         return button
     }()
     
@@ -66,6 +68,20 @@ class Popup: UIView {
     @objc func startPCBuildingButtonClicked() {
         print("startPCBuildingButtonClicked")
         animateOut()
+        self.viewController.detectionOverlay.isHidden = true
+        self.viewController.menuButton.isHidden = true
+        self.viewController.previousButton.isHidden = false
+        self.viewController.nextButton.isHidden = false
+        self.viewController.stateController.step = 1
+        self.viewController.updateARView()
+    }
+    
+    @objc func identifyPCPartsButtonClicked() {
+        print("identifyPCPartsButtonClicked")
+        animateOut()
+        self.viewController.detectionOverlay.isHidden = false
+        self.viewController.statusViewController.showMessage("IDENTIFY PC PARTS")
+        self.viewController.menuButton.isHidden = false
     }
     
     fileprivate lazy var identifyPCPartsButtonStack: UIStackView = {
@@ -116,7 +132,8 @@ class Popup: UIView {
         })
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, viewController:ViewController) {
+        self.viewController = viewController
         super.init(frame: frame)
         
 //        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animateOut)))
